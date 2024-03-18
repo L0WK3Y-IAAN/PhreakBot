@@ -1,0 +1,27 @@
+2024-03-17 19:55:43 - Traceback (most recent call last):
+  File "/home/ubuntudev/Documents/programming/python/PhreakBot/./chat.py", line 182, in on_message
+    completion = client.chat.completions.create(
+  File "/home/ubuntudev/.local/lib/python3.10/site-packages/openai/_utils/_utils.py", line 275, in wrapper
+    return func(*args, **kwargs)
+  File "/home/ubuntudev/.local/lib/python3.10/site-packages/openai/resources/chat/completions.py", line 663, in create
+    return self._post(
+  File "/home/ubuntudev/.local/lib/python3.10/site-packages/openai/_base_client.py", line 1200, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/home/ubuntudev/.local/lib/python3.10/site-packages/openai/_base_client.py", line 889, in request
+    return self._request(
+  File "/home/ubuntudev/.local/lib/python3.10/site-packages/openai/_base_client.py", line 980, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-la7yv***************************************41vG. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+2024-03-17 19:55:43 - An error occurred while processing your request: 'DatetimeWithNanoseconds' object has no attribute 'to_dict'
+2024-03-17 20:24:54 - An error occurred while processing your request: [Errno 2] No such file or directory: '/cogs/challenges/threads.json'
+2024-03-17 20:24:55 - An error occurred while processing your request: [Errno 2] No such file or directory: '/cogs/challenges/threads.json'
+2024-03-17 20:24:55 - An error occurred while processing your request: [Errno 2] No such file or directory: '/cogs/challenges/threads.json'
+2024-03-17 20:24:55 - An error occurred while processing your request: [Errno 2] No such file or directory: '/cogs/challenges/threads.json'
+2024-03-17 20:24:55 - An error occurred while processing your request: [Errno 2] No such file or directory: '/cogs/challenges/threads.json'
+2024-03-17 20:24:55 - An error occurred while processing your request: [Errno 2] No such file or directory: '/cogs/challenges/threads.json'
+2024-03-17 20:24:56 - An error occurred while processing your request: [Errno 2] No such file or directory: '/cogs/challenges/threads.json'
+2024-03-17 20:24:59 - An error occurred while processing your request: [Errno 2] No such file or directory: '/cogs/challenges/threads.json'
+2024-03-17 20:24:59 - An error occurred while processing your request: [Errno 2] No such file or directory: '/cogs/challenges/threads.json'
+2024-03-17 20:24:59 - An error occurred while processing your request: [Errno 2] No such file or directory: '/cogs/challenges/threads.json'
+2024-03-17 20:25:00 - An error occurred while processing your request: [Errno 2] No such file or directory: '/cogs/challenges/threads.json'

@@ -6,6 +6,7 @@
 '''
 
 import os
+import json
 import base64
 import asyncio
 import discord
@@ -25,6 +26,7 @@ from cogs.security_tools.filehash import FileHash
 from cogs.server_management.bump_reminder import BumpReminder
 from cogs.server_management.deletemsg import DelMsg
 from cogs.news.news import NewsFeed
+from cogs.challenges.not_this_again import Not_This_Again_CTF
 
 
 
@@ -132,6 +134,7 @@ async def load_cogs():
                     await bot.add_cog(BumpReminder(bot))
                     await bot.add_cog(DelMsg(bot))
                     await bot.add_cog(NewsFeed(bot))
+                    await bot.add_cog(Not_This_Again_CTF(bot))
                     await bot.load_extension(f'cogs.{module_path}')
                 except Exception as e:
                     print(f"Failed to load extension '{module_path}': {e}")
@@ -141,7 +144,17 @@ async def load_cogs():
 @bot.event
 async def on_message(message):
     try:
-        if bot.user.mentioned_in(message):
+        # Load thread IDs from threads.json
+        with open('./cogs/challenges/threads.json', 'r') as f:
+            threads_data = json.load(f)
+        thread_ids = [thread['id'] for thread in threads_data]
+        print(thread_ids)
+        # Check if the message is in a channel corresponding to a thread ID
+        if message.channel.id in thread_ids and bot.user.mentioned_in(message):
+    
+            return
+        
+        elif bot.user.mentioned_in(message):
             prompt = message.content.replace(f'<@!{bot.user.id}>', '').strip()
             user_id = str(message.author.id)
             user_data = await load_user_data(user_id)
