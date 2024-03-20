@@ -38,7 +38,7 @@ def determine_rank(points):
     elif 2000 <= points < 3000:
         return "🛡️ Guardian"
     elif 3000 <= points < 4000:
-        return "👑 Elite"
+        return "😎 Elite"
     elif 4000 <= points < 8000:
         return "👽 Hacker"
     elif 8000 <= points < 12000:
@@ -49,10 +49,12 @@ def determine_rank(points):
         return "🏅 Master"
     elif 17000 <= points < 20000:
         return "🧘‍♂️ Guru"
-    elif points >= 20000:
+    elif 20000 <= points < 50000:
+        return "👑 Grandmaster"
+    elif points >= 50000:
         return "🌌 God"
     else:
-        return "👁️ The Chosen One"
+        return "❓❓❓"
 
 async def update_leaderboard_embed():
     global file_last_modified
